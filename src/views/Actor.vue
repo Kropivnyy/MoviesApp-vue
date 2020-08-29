@@ -35,6 +35,7 @@ import Vue from 'vue';
 import SyncLoader from 'vue-spinner/src/SyncLoader.vue';
 import CropRectangle from '@/components/CropRectangle.vue';
 import CommentsSidebar from '@/components/CommentsSidebar.vue';
+import LSHelper from '@/utils/LSHelper';
 
 export default {
   name: 'actor',
@@ -164,6 +165,8 @@ export default {
         actorUrl: this.actorUrl,
         rectProps,
       });
+
+      LSHelper.setToLS('actorsRect', this.$store.getters.actorsRect);
 
       this.drawRect(rectProps);
     },

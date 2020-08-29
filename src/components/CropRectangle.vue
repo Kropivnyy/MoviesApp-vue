@@ -14,10 +14,15 @@ export default {
 
 <style lang="scss">
 .CropRectangle {
+  display: none;
   position: absolute;
   background-color: transparent;
   border: 2px solid #ee2139;
   transition: background-color 0.15s ease-in-out;
+
+  @media screen and (min-width: 1024px) {
+    display: block;
+  }
 
   &:hover {
     background-color: #ffffff34;

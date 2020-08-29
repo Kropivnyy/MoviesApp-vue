@@ -31,6 +31,7 @@ export default {
   mounted() {
     const user = LSHelper.getFromLS('user');
     const movies = LSHelper.getFromLS('movies');
+    const actorsRect = LSHelper.getFromLS('actorsRect');
 
     if (user) {
       this.$store.commit('setUserFromLS', user);
@@ -38,6 +39,10 @@ export default {
 
     if (movies) {
       this.$store.commit('setMoviesFromLS', movies);
+    }
+
+    if (actorsRect) {
+      this.$store.commit('setActorsRectFromLS', actorsRect);
     }
   },
 };

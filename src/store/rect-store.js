@@ -8,6 +8,13 @@ export default {
     actorsRect: {},
   },
   mutations: {
+    setActorsRectFromLS(state, actorsRect) {
+      state.actorsRect = actorsRect;
+    },
+    removeActorsRectFromLS(state) {
+      state.actorsRect = [];
+    },
+
     addNewRect(state, { actorUrl, rectProps }) {
       if (state.actorsRect[actorUrl]) {
         state.actorsRect[actorUrl] = [...state.actorsRect[actorUrl], rectProps];

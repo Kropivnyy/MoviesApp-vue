@@ -61,8 +61,10 @@ export default {
     onLogout() {
       this.$store.commit('logoutUser');
       this.$store.commit('removeMoviesFromLS');
+      this.$store.commit('removeActorsRectFromLS');
       LSHelper.deleteFromLS('user');
       LSHelper.deleteFromLS('movies');
+      LSHelper.deleteFromLS('actorsRect');
       this.$router.push('/login');
     },
   },
